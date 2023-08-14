@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="scripts/app.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="main"
+      style="
+        background-color: #6100bb;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h1>Background Color: #6100bb</h1>
+      <button type="submit" class="submit-btn">Change Colour</button>
+    </div>
+  </body>
+</html>
+
+<!-- const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+const btn = document.getElementById('btn-color');
+const color = document.getElementById('color-value');
+
+
+btn.addEventListener('click',() =>{
+    let hexColor = '#';
+
+    for (let index = 0; index < 6; index++) {
+        hexColor += hex[randomNumberGenerate()];
+    }
+
+    document.body.style.backgroundColor = hexColor;
+    color.textContent = hexColor;
+    
+});
+
+let randomNumberGenerate = () =>{
+    return Math.floor(Math.random() * hex.length);
+}
+
+
+// let changeBackgroundColor = () =>{
+//     let hexColor = '#';
+//     for (let index = 0; index < array.length; index++) {
+//         hexColor =+ hex[index];
+//     }
+
+//     console.log(hexColor);
+// }
+
+// () -->

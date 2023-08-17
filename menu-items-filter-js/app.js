@@ -89,12 +89,6 @@ window.addEventListener("DOMContentLoaded", function () {
   displayButtons(menu);
 });
 
-// btns.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     console.log(e.target);
-//   });
-// });
-
 function displayButtons(menu) {
   let categories = menu.map((item) => {
     return item.category;

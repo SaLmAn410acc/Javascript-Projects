@@ -98,16 +98,21 @@ const deleteItem = (e) => {
 };
 
 const removeLocalStorage = (id) => {
-  //   console.log(id);
+  const items = getLocalStorageItems();
+
+  const newItems = items.filter((item) => {
+    return item.id !== id;
+  });
+
+  // console.log(newItems);
+  localStorage.setItem("list", JSON.stringify(newItems));
 };
 
 const addToLocalStorage = (id, value) => {
   const grocery = { id, value };
-  const items = localStorage.getItem("list")
-    ? JSON.parse(localStorage.getItem("list"))
-    : [];
+  const items = getLocalStorageItems();
 
-  console.log(items);
+  // console.log(items);
 
   items.push(grocery);
   localStorage.setItem("list", JSON.stringify(items));
@@ -115,8 +120,25 @@ const addToLocalStorage = (id, value) => {
   //   console.log("added to local storage");
 };
 
+const getLocalStorageItems = () => {
+  return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+};
+
 const editLocalStorage = (editId, value) => {
-  console.log("edit in local storage value");
+  const items = getLocalStorageItems();
+
+  const newItems = items.map((item) => {
+    if (item.id === editID) {
+      item.value = value;
+    }
+    return item;
+  });
+
+  // console.log(newItems);
+  localStorage.setItem("list", JSON.stringify(newItems));
+  // console.log("edit in local storage value");
 };
 const editItem = (e) => {
   const elem = e.currentTarget.parentElement.parentElement;
